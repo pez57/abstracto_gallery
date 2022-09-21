@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import EventCategory, EventTicket
 
-# Register your models here.
+admin.site.register(EventCategory)
+admin.site.register(EventTicket)

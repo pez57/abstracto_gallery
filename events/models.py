@@ -2,6 +2,10 @@ import uuid
 from django.db import models
 
 class EventCategory(models.Model):
+
+    class Meta:
+        verbose_name_plural = "Event categories"
+        
     name = models.CharField(max_length=50)
 
     def __str__(self):
@@ -16,6 +20,9 @@ class EventTicket(models.Model):
     date = models.DateField()
     time = models.TimeField()
     reference_number = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+
+    class Meta:
+        ordering = ['date']
     
     def __str__(self):
         return self.name
