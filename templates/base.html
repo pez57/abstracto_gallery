@@ -80,7 +80,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{% url 'view_bag' %}">
                             <i class="fa-solid fa-cart-shopping"></i>
                             {% if per_id_count > 0 %}
                                 <label id="cart-label" class="badge badge-info">{{ per_id_count }}</label>
