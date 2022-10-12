@@ -5,14 +5,42 @@
 <header class="masthead">
     <div class="container px-4 px-lg-5 d-flex h-50 align-items-center justify-content-center">
         <div class="d-flex justify-content-center">
-            <div class="text-center">
-                <h1 class="text-white-50 mx-auto mt-2 mb-5">Upcoming Events</h1>
-                <h2 class="text-white-50 mx-auto mt-2 mb-5">View events and buy tickets</h2>
-                
+            <div class="text-center text-white-50">
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">Upcoming Events</h2>
+                <div>
+                    <p>
+                        Some info about events Some info about events Some info about events
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </header>
+<div class="row">
+    <div class="container event-container ">
+        <div class="row">
+            {% for event in events %}
+            <div class="card border-secondary text-center w-50 mx-auto mb-5">
+                <div class="card-header">
+                    {{ event.category }}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ event.name }}</h5>
+                    <p class="card-text">Artist: {{ event.date }}</p>
+                    <p class="card-text">Artist: {{ event.artist }}</p>
+                    <p class="card-text">{{ event.description }}</p>
+                    <p class="cardtext">£{{ event.price }}</p>
+                    <a href="#" class="btn btn-primary">Buy Tickets</a>
+                </div>
+                <div class="card-footer text-bold">
+                    Event starts at {{ event.time }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 
 
 {% endblock %}
